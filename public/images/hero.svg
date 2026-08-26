@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Pilgrimage road at sunrise</title>
+  <desc id="desc">A warm landscape with a road leading toward distant hills.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#e8c17c"/>
+      <stop offset="0.46" stop-color="#dba271"/>
+      <stop offset="1" stop-color="#6f7f72"/>
+    </linearGradient>
+    <linearGradient id="road" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#d8c2a1"/>
+      <stop offset="1" stop-color="#7a5143"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <circle cx="1160" cy="260" r="110" fill="#f6dfad" opacity=".9"/>
+  <path d="M0 560 C220 500 350 520 520 470 C720 410 850 450 1040 390 C1260 320 1410 350 1600 290 L1600 1000 L0 1000 Z" fill="#4d6b61"/>
+  <path d="M0 680 C230 610 410 650 620 590 C840 528 1030 560 1240 500 C1390 456 1500 460 1600 440 L1600 1000 L0 1000 Z" fill="#354d46" opacity=".82"/>
+  <path d="M690 1000 C760 830 805 700 832 574 C862 704 928 842 1038 1000 Z" fill="url(#road)"/>
+  <path d="M824 590 C814 715 774 842 725 1000" fill="none" stroke="#f5e7cf" stroke-width="8" opacity=".58"/>
+  <path d="M852 590 C884 728 940 858 1012 1000" fill="none" stroke="#f5e7cf" stroke-width="8" opacity=".5"/>
+  <path d="M170 734 C250 680 330 704 405 652" fill="none" stroke="#f4dcb1" stroke-width="10" opacity=".42"/>
+  <path d="M1190 710 C1286 638 1398 672 1480 606" fill="none" stroke="#f4dcb1" stroke-width="10" opacity=".34"/>
+</svg>
