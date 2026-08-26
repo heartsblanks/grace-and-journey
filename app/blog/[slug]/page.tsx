@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { BlogBook } from "@/components/BlogBook";
 import { posts } from "@/content/site";
 
 type BlogPostPageProps = {
@@ -44,11 +45,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <h1>{post.title}</h1>
         <p>{post.summary}</p>
       </section>
-      <section className="section alt">
-        {post.body.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
-      </section>
+      <BlogBook post={post} />
     </article>
   );
 }

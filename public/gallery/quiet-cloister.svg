@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title">
+  <title id="title">Quiet cloister</title>
+  <rect width="1200" height="800" fill="#8ca79d"/>
+  <rect y="420" width="1200" height="380" fill="#d9c6a2"/>
+  <path d="M0 800V255h1200v545Z" fill="#f1e2c8"/>
+  <path d="M130 800V385c0-120 150-120 150 0v415Zm260 0V385c0-120 150-120 150 0v415Zm260 0V385c0-120 150-120 150 0v415Zm260 0V385c0-120 150-120 150 0v415Z" fill="#5f756b"/>
+  <path d="M0 285h1200" stroke="#8a5b43" stroke-width="42"/>
+  <circle cx="600" cy="585" r="92" fill="#4f6d60"/>
+</svg>

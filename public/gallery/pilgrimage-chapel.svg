@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title">
+  <title id="title">Pilgrimage chapel</title>
+  <rect width="1200" height="800" fill="#9eb8ad"/>
+  <path d="M0 520c190-90 320-30 520-110 250-98 410-42 680-150v540H0Z" fill="#516c5f"/>
+  <path d="M365 710V360l235-150 235 150v350Z" fill="#f3e4ca"/>
+  <path d="m318 382 282-190 282 190" fill="none" stroke="#7b4c3e" stroke-width="38" stroke-linecap="round"/>
+  <path d="M540 710V510c0-78 120-78 120 0v200Z" fill="#5f4438"/>
+  <path d="M600 300v-72m-32 32h64" stroke="#7b4c3e" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="935" cy="155" r="70" fill="#efd18b"/>
+</svg>

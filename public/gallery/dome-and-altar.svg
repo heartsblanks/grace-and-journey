@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title">
+  <title id="title">Dome and altar</title>
+  <rect width="1200" height="800" fill="#423832"/>
+  <path d="M160 800V340c0-260 880-260 880 0v460Z" fill="#d8bf91"/>
+  <path d="M240 800V380c0-195 720-195 720 0v420Z" fill="#74513f"/>
+  <path d="M380 800V440c0-122 440-122 440 0v360Z" fill="#f0e0c5"/>
+  <circle cx="600" cy="335" r="82" fill="#edc46d"/>
+  <path d="M600 232v-72m-32 32h64" stroke="#f0e0c5" stroke-width="16" stroke-linecap="round"/>
+  <rect x="430" y="640" width="340" height="82" fill="#865443"/>
+</svg>

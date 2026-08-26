@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title">
+  <title id="title">Candle prayer</title>
+  <rect width="1200" height="800" fill="#2b2723"/>
+  <radialGradient id="glow" cx="50%" cy="35%" r="55%">
+    <stop offset="0" stop-color="#ffd891"/>
+    <stop offset=".45" stop-color="#9c6243"/>
+    <stop offset="1" stop-color="#2b2723"/>
+  </radialGradient>
+  <rect width="1200" height="800" fill="url(#glow)"/>
+  <path d="M535 685h130l18-340H517Z" fill="#f6ead7"/>
+  <path d="M600 342c-58-75 15-118 0-182 84 76 76 139 0 182Z" fill="#ffd169"/>
+  <path d="M455 685h-82l-10-215h102Zm372 0h-82l-10-215h102Z" fill="#e7d5b9" opacity=".84"/>
+  <path d="M260 690h680" stroke="#5a382e" stroke-width="24" stroke-linecap="round"/>
+</svg>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { BackgroundVideo } from "@/components/BackgroundVideo";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 
@@ -19,8 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <BackgroundVideo />
         <Header />
-        <main>{children}</main>
+        <main className="page-shell">{children}</main>
         <Footer />
       </body>
     </html>

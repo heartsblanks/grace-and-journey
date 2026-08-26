@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title">
+  <title id="title">Golden basilica nave</title>
+  <rect width="1200" height="800" fill="#2f3f3b"/>
+  <path d="M0 800 410 190h380l410 610Z" fill="#c49b62"/>
+  <path d="M250 800 510 260h180l260 540Z" fill="#f0dec1"/>
+  <path d="M390 800 540 390h120l150 410Z" fill="#8a5541"/>
+  <path d="M160 800V260c0-95 120-95 120 0v540Zm760 0V260c0-95 120-95 120 0v540Z" fill="#e7cfaa"/>
+  <path d="M520 215c0-86 160-86 160 0v112H520Z" fill="#5f7b70"/>
+  <circle cx="600" cy="250" r="36" fill="#f6d98c"/>
+</svg>
