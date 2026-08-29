@@ -8,4 +8,5 @@ build
 !.env.example
 .vercel
 *.log
+*.tsbuildinfo
 .DS_Store
