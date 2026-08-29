@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title">
+  <title id="title">Ancient hills at sunset with three crosses on a hill</title>
+  <defs>
+    <linearGradient id="hl-sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#e9c17c"/>
+      <stop offset="0.55" stop-color="#d99a72"/>
+      <stop offset="1" stop-color="#8c5a5a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#hl-sky)"/>
+  <circle cx="860" cy="190" r="95" fill="#f7dfae" opacity="0.92"/>
+  <path d="M0 520 C220 470 360 500 520 460 C700 415 830 445 1000 400 C1080 380 1150 385 1200 375 L1200 800 L0 800 Z" fill="#a97a58" opacity="0.85"/>
+  <path d="M0 600 C260 555 420 585 600 545 C780 505 900 535 1080 500 L1200 490 L1200 800 L0 800 Z" fill="#7c5a44"/>
+  <g fill="#5c4032">
+    <rect x="330" y="470" width="46" height="70"/>
+    <rect x="400" y="450" width="60" height="90"/>
+    <rect x="480" y="465" width="40" height="75"/>
+    <rect x="540" y="440" width="70" height="100"/>
+    <circle cx="575" cy="432" r="24"/>
+    <rect x="630" y="460" width="50" height="80"/>
+    <rect x="700" y="475" width="44" height="65"/>
+    <circle cx="722" cy="468" r="18"/>
+  </g>
+  <path d="M560 800V560l14-30 14 30V800Z" fill="#3a2a22"/>
+  <path d="M420 800V600l12-24 12 24V800Z" fill="#3a2a22"/>
+  <path d="M700 800V610l12-24 12 24V800Z" fill="#3a2a22"/>
+  <path d="M574 530V500m-16 16h32" stroke="#3a2a22" stroke-width="10" stroke-linecap="round"/>
+  <path d="M434 570V546m-14 14h28" stroke="#3a2a22" stroke-width="9" stroke-linecap="round"/>
+  <path d="M714 580V556m-14 14h28" stroke="#3a2a22" stroke-width="9" stroke-linecap="round"/>
+</svg>
