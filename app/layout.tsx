@@ -28,7 +28,12 @@ export default function RootLayout({
   const liturgical = getLiturgicalInfo();
 
   return (
-    <html className={displayFont.variable} data-season={liturgical.season} lang="en">
+    <html
+      className={displayFont.variable}
+      data-liturgical-color={liturgical.color}
+      data-season={liturgical.season}
+      lang="en"
+    >
       <body>
         <BackgroundVideo />
         <Header />
