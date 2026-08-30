@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" role="img" aria-labelledby="title">
+  <title id="title">A sealed letter, ready to send</title>
+  <defs>
+    <linearGradient id="cm-bg" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#f0d9a8"/>
+      <stop offset="1" stop-color="#d8b877"/>
+    </linearGradient>
+    <linearGradient id="cm-envelope" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#fffaf0"/>
+      <stop offset="1" stop-color="#ead7b9"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="420" fill="url(#cm-bg)"/>
+  <g opacity="0.5" stroke="#fff6db" stroke-width="3">
+    <line x1="300" y1="30" x2="300" y2="70"/>
+    <line x1="220" y1="46" x2="248" y2="70"/>
+    <line x1="380" y1="46" x2="352" y2="70"/>
+  </g>
+  <rect x="110" y="120" width="380" height="240" rx="14" fill="url(#cm-envelope)" stroke="#c9a568" stroke-width="3"/>
+  <path d="M110 134 L300 270 L490 134" fill="none" stroke="#c9a568" stroke-width="3"/>
+  <path d="M110 134 L300 270 L490 134 L490 138 L300 276 L110 138 Z" fill="#f7ecd6"/>
+  <circle cx="300" cy="238" r="34" fill="#6b1f2a"/>
+  <circle cx="300" cy="238" r="34" fill="none" stroke="#4a1420" stroke-width="2"/>
+  <path d="M300 220v36M286 238h28" stroke="#e9c9a0" stroke-width="5" stroke-linecap="round"/>
+</svg>

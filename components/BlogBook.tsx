@@ -86,13 +86,13 @@ export function BlogBook({ post }: BlogBookProps) {
         <span className="book-gutter" aria-hidden="true" />
         <FlipBook
           ref={flipBookRef}
-          width={420}
-          height={600}
+          width={560}
+          height={780}
           size="stretch"
-          minWidth={260}
-          maxWidth={560}
-          minHeight={370}
-          maxHeight={800}
+          minWidth={340}
+          maxWidth={760}
+          minHeight={480}
+          maxHeight={1040}
           showCover
           drawShadow
           flippingTime={800}

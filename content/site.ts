@@ -93,3 +93,27 @@ export const pilgrimages: Pilgrimage[] = [
     summary: "A future pilgrimage path through Rome, Assisi, prayer, history, and community."
   }
 ];
+
+export type PilgrimageDetails = {
+  image: string;
+  highlights: string[];
+};
+
+export const pilgrimageDetails: Record<string, PilgrimageDetails> = {
+  "holy-land": {
+    image: "/pilgrimage/holy-land.svg",
+    highlights: [
+      "Sites of Scripture and salvation history",
+      "Guided prayer at sacred landmarks",
+      "Time for silence, Scripture, and reflection"
+    ]
+  },
+  "rome-and-assisi": {
+    image: "/pilgrimage/rome-and-assisi.svg",
+    highlights: [
+      "The heart of the Church in Rome",
+      "Franciscan simplicity in Assisi",
+      "Mass, history, and community along the way"
+    ]
+  }
+};
