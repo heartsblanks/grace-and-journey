@@ -1,8 +1,11 @@
 export type LiturgicalSeason = "advent" | "christmas" | "lent" | "easter" | "ordinary";
 
+export type LiturgicalColor = "violet" | "white" | "green" | "red" | "rose";
+
 export type LiturgicalInfo = {
   name: string;
   season: LiturgicalSeason;
+  color: LiturgicalColor;
 };
 
 function daysFromEpoch(date: Date): number {
@@ -43,12 +46,17 @@ function sundayOnOrBefore(date: Date): Date {
   return addDays(date, -weekday);
 }
 
+function isSameDay(dayNumber: number, date: Date): boolean {
+  return dayNumber === daysFromEpoch(date);
+}
+
 /**
- * Approximate liturgical season for a given date. This is a decorative
- * best-effort calculation (used for a color accent, not liturgical
+ * Approximate liturgical color/season for a given date. This is a decorative
+ * best-effort calculation (used for a site accent, not liturgical
  * scheduling), not an authoritative Church calendar: it does not account
- * for movable solemnities, local calendars, or the exact end of the
- * Christmas season (Baptism of the Lord), which is fixed here at Jan 6.
+ * for movable solemnities (Trinity Sunday, Christ the King, saints' days),
+ * local calendars, or the exact end of the Christmas season (Baptism of the
+ * Lord), which is fixed here at Jan 6.
  */
 export function getLiturgicalInfo(date: Date = new Date()): LiturgicalInfo {
   const year = date.getFullYear();
@@ -61,23 +69,42 @@ export function getLiturgicalInfo(date: Date = new Date()): LiturgicalInfo {
   const easter = easterSunday(year);
   const ashWednesday = addDays(easter, -46);
   const pentecost = addDays(easter, 49);
+  const palmSunday = addDays(easter, -7);
+  const goodFriday = addDays(easter, -2);
+  const gaudeteSunday = addDays(adventStart, 14);
+  const laetareSunday = addDays(ashWednesday, 25);
 
   // Tail end of the Christmas season that began on Dec 25 of the prior year.
-  if (today <= daysFromEpoch(epiphany)) {
-    return { name: "Christmas", season: "christmas" };
-  }
-  if (today >= daysFromEpoch(christmas)) {
-    return { name: "Christmas", season: "christmas" };
-  }
-  if (today >= daysFromEpoch(ashWednesday) && today < daysFromEpoch(easter)) {
-    return { name: "Lent", season: "lent" };
-  }
-  if (today >= daysFromEpoch(easter) && today <= daysFromEpoch(pentecost)) {
-    return { name: "Easter", season: "easter" };
-  }
-  if (today >= daysFromEpoch(adventStart)) {
-    return { name: "Advent", season: "advent" };
+  if (today <= daysFromEpoch(epiphany) || today >= daysFromEpoch(christmas)) {
+    return { name: "Christmas", season: "christmas", color: "white" };
   }
 
-  return { name: "Ordinary Time", season: "ordinary" };
+  if (today >= daysFromEpoch(ashWednesday) && today < daysFromEpoch(easter)) {
+    if (isSameDay(today, palmSunday)) {
+      return { name: "Palm Sunday", season: "lent", color: "red" };
+    }
+    if (isSameDay(today, goodFriday)) {
+      return { name: "Good Friday", season: "lent", color: "red" };
+    }
+    if (isSameDay(today, laetareSunday)) {
+      return { name: "Laetare Sunday", season: "lent", color: "rose" };
+    }
+    return { name: "Lent", season: "lent", color: "violet" };
+  }
+
+  if (today >= daysFromEpoch(easter) && today <= daysFromEpoch(pentecost)) {
+    if (isSameDay(today, pentecost)) {
+      return { name: "Pentecost", season: "easter", color: "red" };
+    }
+    return { name: "Easter", season: "easter", color: "white" };
+  }
+
+  if (today >= daysFromEpoch(adventStart)) {
+    if (isSameDay(today, gaudeteSunday)) {
+      return { name: "Gaudete Sunday", season: "advent", color: "rose" };
+    }
+    return { name: "Advent", season: "advent", color: "violet" };
+  }
+
+  return { name: "Ordinary Time", season: "ordinary", color: "green" };
 }

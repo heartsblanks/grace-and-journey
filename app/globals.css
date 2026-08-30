@@ -6,29 +6,48 @@
   --paper: #fbfaf7;
   --soft: #f1eee8;
   --accent: #7a5143;
-  --accent-strong: #4d6b61;
   --white: #ffffff;
   --gold: #c9a227;
   --gold-soft: #d8b877;
   --burgundy: #6b1f2a;
   --navy: #25314f;
-  --season-accent: var(--accent-strong);
+  --liturgical-violet: #5b3a73;
+  --liturgical-gold: #96701c;
+  --liturgical-green: #3f5a44;
+  --liturgical-red: var(--burgundy);
+  --liturgical-rose: #8a4560;
+  --season-accent: var(--liturgical-green);
+  --season-tint: color-mix(in srgb, var(--season-accent) 45%, transparent);
+  --season-wash: color-mix(in srgb, var(--season-accent) 12%, white);
+  --season-surface: color-mix(in srgb, var(--season-accent) 6%, var(--paper));
+  --season-surface-dark: color-mix(in srgb, var(--season-accent) 35%, #14100c);
 }
 
-/* Liturgical-season accent: a decorative approximation of the Church
-   calendar (see content/liturgical.ts), set as data-season on <html>. */
-:root[data-season="advent"],
-:root[data-season="lent"] {
-  --season-accent: #5b3a73;
+/*
+ * Liturgical color of the day: drives the site's accent color (buttons,
+ * dividers, active nav, card tops, badges) from the Church calendar (see
+ * content/liturgical.ts), set as data-liturgical-color on <html>. "White"
+ * feast/season days render as a deep gold rather than literal white, which
+ * would be invisible against the paper background.
+ */
+:root[data-liturgical-color="violet"] {
+  --season-accent: var(--liturgical-violet);
 }
 
-:root[data-season="christmas"],
-:root[data-season="easter"] {
-  --season-accent: var(--gold);
+:root[data-liturgical-color="white"] {
+  --season-accent: var(--liturgical-gold);
 }
 
-:root[data-season="ordinary"] {
-  --season-accent: var(--accent-strong);
+:root[data-liturgical-color="green"] {
+  --season-accent: var(--liturgical-green);
+}
+
+:root[data-liturgical-color="red"] {
+  --season-accent: var(--liturgical-red);
+}
+
+:root[data-liturgical-color="rose"] {
+  --season-accent: var(--liturgical-rose);
 }
 
 * {
@@ -54,7 +73,7 @@ a {
 .site-header {
   align-items: center;
   backdrop-filter: blur(10px);
-  background: rgba(251, 250, 247, 0.86);
+  background: color-mix(in srgb, var(--season-surface) 86%, transparent);
   border-bottom: 2px solid var(--season-accent);
   display: flex;
   gap: 24px;
@@ -76,17 +95,25 @@ a {
   z-index: -2;
 }
 
-body::before {
-  background: rgba(20, 16, 12, 0.36);
-  content: "";
+.background-scrim {
+  background: color-mix(in srgb, var(--season-surface-dark) 36%, transparent);
   inset: 0;
   pointer-events: none;
   position: fixed;
   z-index: -1;
 }
 
+.background-pattern {
+  background: url("/images/icon-pattern.svg") repeat, var(--season-surface-dark);
+  background-size: 320px;
+  inset: 0;
+  pointer-events: none;
+  position: fixed;
+  z-index: -2;
+}
+
 .page-shell {
-  background: rgba(251, 250, 247, 0.34);
+  background: color-mix(in srgb, var(--season-surface) 34%, transparent);
   min-height: 72vh;
   position: relative;
 }
@@ -140,7 +167,11 @@ body::before {
 
 .hero {
   background:
-    linear-gradient(90deg, rgba(37, 34, 29, 0.76), rgba(37, 34, 29, 0.18));
+    linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--season-surface-dark) 76%, transparent),
+      color-mix(in srgb, var(--season-surface-dark) 18%, transparent)
+    );
   color: var(--white);
   min-height: 68vh;
   overflow: hidden;
@@ -179,7 +210,7 @@ body::before {
 }
 
 .hero-glow {
-  background: radial-gradient(circle, rgba(247, 223, 181, 0.32), transparent 60%);
+  background: radial-gradient(circle, var(--season-tint), transparent 60%);
   border-radius: 50%;
   height: 900px;
   pointer-events: none;
@@ -219,7 +250,7 @@ body::before {
 }
 
 .eyebrow {
-  color: var(--accent-strong);
+  color: var(--season-accent);
   font-family: var(--font-display), Georgia, serif;
   font-size: 0.95rem;
   font-weight: 700;
@@ -303,7 +334,7 @@ p {
 }
 
 .section.alt {
-  background: rgba(241, 238, 232, 0.78);
+  background: color-mix(in srgb, var(--season-surface) 78%, transparent);
 }
 
 .section-header {
@@ -312,14 +343,14 @@ p {
 
 .section-divider {
   align-items: center;
-  color: var(--gold);
+  color: var(--season-accent);
   display: flex;
   gap: 16px;
   padding: 0 clamp(18px, 4vw, 56px);
 }
 
 .section-divider-line {
-  background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
+  background: linear-gradient(90deg, transparent, var(--season-accent) 50%, transparent);
   flex: 1;
   height: 1px;
 }
@@ -332,19 +363,19 @@ p {
 }
 
 .card {
-  background: var(--white);
+  background: var(--season-surface);
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 22px;
 }
 
 .card a {
-  color: var(--accent);
+  color: var(--season-accent);
   font-weight: 700;
 }
 
 .icon-card {
-  background: var(--white);
+  background: var(--season-surface);
   border: 1px solid var(--line);
   border-radius: 10px;
   border-top: 3px solid var(--season-accent);
@@ -359,10 +390,10 @@ p {
 
 .icon-card-badge {
   align-items: center;
-  background: rgba(201, 162, 39, 0.12);
-  border: 1px solid rgba(201, 162, 39, 0.5);
+  background: var(--season-wash);
+  border: 1px solid color-mix(in srgb, var(--season-accent) 45%, transparent);
   border-radius: 50%;
-  color: var(--burgundy);
+  color: var(--season-accent);
   display: inline-flex;
   height: 52px;
   justify-content: center;
@@ -376,7 +407,7 @@ p {
 }
 
 .blog-card-icon {
-  color: var(--gold);
+  color: var(--season-accent);
   margin-bottom: 10px;
 }
 
@@ -388,7 +419,7 @@ p {
 }
 
 .button {
-  background: var(--accent);
+  background: var(--season-accent);
   border-radius: 8px;
   color: var(--white);
   display: inline-flex;
@@ -402,7 +433,7 @@ p {
 }
 
 .page-title {
-  background: rgba(251, 250, 247, 0.58);
+  background: color-mix(in srgb, var(--season-surface) 58%, transparent);
   padding: clamp(56px, 9vw, 104px) clamp(18px, 4vw, 56px) clamp(34px, 5vw, 56px);
 }
 
@@ -421,7 +452,7 @@ p {
   aspect-ratio: 4 / 3;
   background-position: center;
   background-size: cover;
-  border: 2px solid rgba(201, 162, 39, 0.55);
+  border: 2px solid color-mix(in srgb, var(--season-accent) 55%, transparent);
   border-radius: 8px;
   color: var(--white);
   display: flex;
@@ -448,7 +479,7 @@ p {
 }
 
 .gallery-item-mark {
-  color: var(--gold);
+  color: var(--season-accent);
   position: absolute;
   right: 10px;
   top: 10px;
@@ -698,13 +729,13 @@ p {
 }
 
 .pilgrimage-highlights svg {
-  color: var(--gold);
+  color: var(--season-accent);
   flex-shrink: 0;
 }
 
 .site-footer {
-  background: var(--ink);
-  border-top: 3px solid var(--gold);
+  background: var(--season-surface-dark);
+  border-top: 3px solid var(--season-accent);
   color: var(--white);
   padding: 36px clamp(18px, 4vw, 56px);
 }

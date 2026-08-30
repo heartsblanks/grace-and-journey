@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="presentation" aria-hidden="true">
+  <title>Scattered Catholic motifs: cross, chi-rho, shell, candle, dove, quatrefoil</title>
+  <g fill="none" stroke="#f4e6c8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.16">
+    <!-- Cross -->
+    <g transform="translate(30,40) rotate(-8) scale(1.15)">
+      <path d="M12 2.5v19M6.5 8h11" />
+    </g>
+
+    <!-- Quatrefoil -->
+    <g transform="translate(140,26) scale(0.9)">
+      <circle cx="12" cy="7.3" r="3.1" />
+      <circle cx="16.7" cy="12" r="3.1" />
+      <circle cx="12" cy="16.7" r="3.1" />
+      <circle cx="7.3" cy="12" r="3.1" />
+    </g>
+
+    <!-- Shell -->
+    <g transform="translate(244,70) rotate(10)">
+      <path d="M12 20L5 13A7 7 0 0 1 19 13Z" />
+      <path d="M12 20L7.05 8.05M12 20V6M12 20l4.95-11.95" />
+    </g>
+
+    <!-- Chi-Rho -->
+    <g transform="translate(48,168) rotate(6) scale(0.95)">
+      <path d="M6 6l12 12M18 6L6 18M12 5.25v13.5M12 5.25c4.9 0 4.9 6.35 0 6.35" />
+    </g>
+
+    <!-- Candle -->
+    <g transform="translate(182,140) rotate(-5)">
+      <rect x="9.5" y="10" width="5" height="9.5" rx="0.6" />
+      <path d="M7 20.5h10" />
+      <path d="M12 3c2 2.6 2.8 4.6 1.6 6.4-.5.8-1.6 1-2.4.5-.9-.5-1.2-1.6-.5-2.6C11.4 6 12 4.5 12 3Z" fill="#f4e6c8" stroke="none" />
+    </g>
+
+    <!-- Dove -->
+    <g transform="translate(266,214) scale(1.1)">
+      <path d="M12 9c-3-1-7 0-9 4 3 1 6.5.5 9-1.5 2.5 2 6 2.5 9 1.5-2-4-6-5-9-4Z" fill="#f4e6c8" stroke="none" />
+      <circle cx="12" cy="6.6" r="1.5" fill="#f4e6c8" stroke="none" />
+    </g>
+
+    <!-- Cross -->
+    <g transform="translate(108,248) rotate(12) scale(0.85)">
+      <path d="M12 2.5v19M6.5 8h11" />
+    </g>
+
+    <!-- Quatrefoil -->
+    <g transform="translate(256,276) scale(0.75)">
+      <circle cx="12" cy="7.3" r="3.1" />
+      <circle cx="16.7" cy="12" r="3.1" />
+      <circle cx="12" cy="16.7" r="3.1" />
+      <circle cx="7.3" cy="12" r="3.1" />
+    </g>
+  </g>
+</svg>
