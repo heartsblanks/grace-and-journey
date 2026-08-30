@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title">
+  <title id="title">A great basilica dome with colonnade, and a hill town in the distance</title>
+  <defs>
+    <linearGradient id="ra-sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#f0cf8f"/>
+      <stop offset="0.6" stop-color="#dba36e"/>
+      <stop offset="1" stop-color="#6f5450"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#ra-sky)"/>
+  <circle cx="300" cy="170" r="80" fill="#f8e3b3" opacity="0.85"/>
+  <path d="M40 430c60-40 140-30 190-58 40-22 60-64 60-64s20 42 60 64c50 28 130 18 190 58" fill="none" stroke="#8c6a4a" stroke-width="6" opacity="0.5"/>
+  <g fill="#7a5a48" opacity="0.9">
+    <rect x="60" y="360" width="30" height="60"/>
+    <rect x="100" y="340" width="26" height="80"/>
+    <rect x="132" y="368" width="34" height="52"/>
+    <rect x="176" y="352" width="18" height="68"/>
+    <path d="M176 352l9-20 9 20Z"/>
+  </g>
+  <path d="M0 800V430c400-60 800-60 1200 0V800Z" fill="#4a3630"/>
+  <g fill="#d8bd94">
+    <rect x="620" y="430" width="330" height="330"/>
+  </g>
+  <path d="M785 300c95 0 150 62 150 150H635c0-88 55-150 150-150Z" fill="#e7cda2"/>
+  <rect x="762" y="230" width="46" height="80" fill="#e7cda2"/>
+  <ellipse cx="785" cy="230" rx="23" ry="14" fill="#efdcb8"/>
+  <path d="M785 210v-34m-14 14h28" stroke="#efdcb8" stroke-width="10" stroke-linecap="round"/>
+  <g fill="#b99a6f">
+    <rect x="640" y="460" width="26" height="300"/>
+    <rect x="700" y="460" width="26" height="300"/>
+    <rect x="760" y="460" width="26" height="300"/>
+    <rect x="820" y="460" width="26" height="300"/>
+    <rect x="880" y="460" width="26" height="300"/>
+    <rect x="924" y="460" width="26" height="300"/>
+  </g>
+  <rect x="620" y="440" width="330" height="26" fill="#cdaf82"/>
+</svg>

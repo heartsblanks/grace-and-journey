@@ -1,3 +1,5 @@
+import { QuatrefoilIcon } from "@/components/icons";
+
 const galleryItems = [
   ["Basilica exterior", "/gallery/basilica-exterior.svg"],
   ["Golden nave", "/gallery/golden-nave.svg"],
@@ -12,6 +14,7 @@ export function GalleryGrid() {
     <div className="gallery-grid">
       {galleryItems.map(([label, image]) => (
         <div className="gallery-item" key={label} style={{ backgroundImage: `url(${image})` }}>
+          <QuatrefoilIcon className="gallery-item-mark" size={18} />
           <span>{label}</span>
         </div>
       ))}

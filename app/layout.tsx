@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
+import { Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import { BackgroundVideo } from "@/components/BackgroundVideo";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { getLiturgicalInfo } from "@/content/liturgical";
+
+const displayFont = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-display"
+});
 
 export const metadata: Metadata = {
   title: {
@@ -17,8 +25,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const liturgical = getLiturgicalInfo();
+
   return (
-    <html lang="en">
+    <html className={displayFont.variable} data-season={liturgical.season} lang="en">
       <body>
         <BackgroundVideo />
         <Header />
