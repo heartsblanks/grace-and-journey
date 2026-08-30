@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
-import { BackgroundVideo } from "@/components/BackgroundVideo";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { PageBackground } from "@/components/PageBackground";
 import { getLiturgicalInfo } from "@/content/liturgical";
 
 const displayFont = Cormorant_Garamond({
@@ -35,7 +35,7 @@ export default function RootLayout({
       lang="en"
     >
       <body>
-        <BackgroundVideo />
+        <PageBackground />
         <Header />
         <main className="page-shell">{children}</main>
         <Footer />
