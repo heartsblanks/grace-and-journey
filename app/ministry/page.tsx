@@ -1,5 +1,6 @@
 import { BookIcon, CandleIcon, ChaliceIcon } from "@/components/icons";
 import { IconCard } from "@/components/IconCard";
+import { Reveal } from "@/components/Reveal";
 import { SectionDivider } from "@/components/SectionDivider";
 
 export const metadata = {
@@ -18,7 +19,7 @@ export default function MinistryPage() {
         </p>
       </section>
       <SectionDivider />
-      <section className="section alt">
+      <Reveal className="section alt">
         <div className="grid">
           <IconCard icon={<CandleIcon />} title="Prayer">
             Seasonal reflections and prayer resources.
@@ -30,7 +31,7 @@ export default function MinistryPage() {
             Resources for growth, preparation, and reflection.
           </IconCard>
         </div>
-      </section>
+      </Reveal>
     </>
   );
 }

@@ -1,4 +1,5 @@
 import { GalleryGrid } from "@/components/GalleryGrid";
+import { Reveal } from "@/components/Reveal";
 
 export const metadata = {
   title: "Gallery"
@@ -12,9 +13,9 @@ export default function GalleryPage() {
         <h1>Moments from the journey</h1>
         <p>Photos and visual notes from ministry life, pilgrimages, and community gatherings.</p>
       </section>
-      <section className="section alt">
+      <Reveal className="section alt">
         <GalleryGrid />
-      </section>
+      </Reveal>
     </>
   );
 }
