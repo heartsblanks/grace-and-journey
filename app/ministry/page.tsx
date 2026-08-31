@@ -2,6 +2,7 @@ import { BookIcon, CandleIcon, ChaliceIcon } from "@/components/icons";
 import { IconCard } from "@/components/IconCard";
 import { Reveal } from "@/components/Reveal";
 import { SectionDivider } from "@/components/SectionDivider";
+import { StaggerGroup } from "@/components/StaggerGroup";
 
 export const metadata = {
   title: "Ministry"
@@ -20,7 +21,7 @@ export default function MinistryPage() {
       </section>
       <SectionDivider />
       <Reveal className="section alt">
-        <div className="grid">
+        <StaggerGroup className="grid">
           <IconCard icon={<CandleIcon />} title="Prayer">
             Seasonal reflections and prayer resources.
           </IconCard>
@@ -30,7 +31,7 @@ export default function MinistryPage() {
           <IconCard icon={<BookIcon />} title="Formation">
             Resources for growth, preparation, and reflection.
           </IconCard>
-        </div>
+        </StaggerGroup>
       </Reveal>
     </>
   );

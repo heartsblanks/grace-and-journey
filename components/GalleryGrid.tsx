@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import { Lightbox } from "@/components/Lightbox";
+import { StaggerGroup } from "@/components/StaggerGroup";
 import { QuatrefoilIcon } from "@/components/icons";
 
 const categories = ["All", "Basilica", "Pilgrimage", "Prayer", "Ministry"] as const;
@@ -43,7 +45,7 @@ export function GalleryGrid() {
           </button>
         ))}
       </div>
-      <div className="gallery-grid">
+      <StaggerGroup className="gallery-grid">
         {filteredItems.map((item, index) => (
           <button
             aria-label={`View ${item.label}`}
@@ -57,15 +59,17 @@ export function GalleryGrid() {
             <span>{item.label}</span>
           </button>
         ))}
-      </div>
-      {lightboxIndex !== null ? (
-        <Lightbox
-          activeIndex={lightboxIndex}
-          items={filteredItems}
-          onClose={() => setLightboxIndex(null)}
-          onNavigate={setLightboxIndex}
-        />
-      ) : null}
+      </StaggerGroup>
+      <AnimatePresence>
+        {lightboxIndex !== null ? (
+          <Lightbox
+            activeIndex={lightboxIndex}
+            items={filteredItems}
+            onClose={() => setLightboxIndex(null)}
+            onNavigate={setLightboxIndex}
+          />
+        ) : null}
+      </AnimatePresence>
     </>
   );
 }

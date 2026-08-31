@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 
 type RevealProps = {
   children: React.ReactNode;
@@ -8,30 +8,17 @@ type RevealProps = {
 };
 
 export function Reveal({ children, className }: RevealProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.15 }
-    );
-
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
+  const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div className={`reveal ${isVisible ? "is-visible" : ""} ${className ?? ""}`} ref={ref}>
+    <motion.div
+      className={className}
+      initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 24 }}
+      transition={{ duration: shouldReduceMotion ? 0 : 0.6, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.15 }}
+      whileInView={{ opacity: 1, y: 0 }}
+    >
       {children}
-    </div>
+    </motion.div>
   );
 }
