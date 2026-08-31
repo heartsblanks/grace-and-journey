@@ -4,6 +4,7 @@ import { Hero } from "@/components/Hero";
 import { PilgrimageFeature } from "@/components/PilgrimageFeature";
 import { PullQuote } from "@/components/PullQuote";
 import { Reveal } from "@/components/Reveal";
+import { StaggerGroup } from "@/components/StaggerGroup";
 import { VerseBand } from "@/components/VerseBand";
 import { posts, pilgrimages } from "@/content/site";
 
@@ -22,11 +23,11 @@ export default function Home() {
             Grace & Journey gathers reflections, ministry updates, and pilgrimage notes in one place.
           </p>
         </div>
-        <div className="grid">
+        <StaggerGroup className="grid">
           {posts.slice(0, 3).map((post) => (
             <BlogCard key={post.slug} post={post} />
           ))}
-        </div>
+        </StaggerGroup>
       </Reveal>
       <Reveal>
         <PullQuote attribution="From the About page">
@@ -39,7 +40,9 @@ export default function Home() {
           <h2>Upcoming journeys</h2>
           <p>Follow pilgrimage planning, location notes, and spiritual preparation resources.</p>
         </div>
-        <PilgrimageFeature eyebrow="Featured Pilgrimage" pilgrimage={featuredPilgrimage} />
+        <div className="glass-panel pilgrimage-spotlight">
+          <PilgrimageFeature eyebrow="Featured Pilgrimage" pilgrimage={featuredPilgrimage} />
+        </div>
         {otherPilgrimages.length > 0 ? (
           <p className="section-footer-link">
             <Link href="/pilgrimages">See all pilgrimages &rarr;</Link>

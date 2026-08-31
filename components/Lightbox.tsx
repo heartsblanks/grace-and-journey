@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 type LightboxItem = {
   label: string;
@@ -16,6 +17,7 @@ type LightboxProps = {
 
 export function Lightbox({ items, activeIndex, onClose, onNavigate }: LightboxProps) {
   const item = items[activeIndex];
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     function handleKeyDown(event: KeyboardEvent) {
@@ -31,7 +33,17 @@ export function Lightbox({ items, activeIndex, onClose, onNavigate }: LightboxPr
   if (!item) return null;
 
   return (
-    <div className="lightbox" onClick={onClose} role="dialog" aria-modal="true" aria-label={item.label}>
+    <motion.div
+      animate={{ opacity: 1 }}
+      aria-label={item.label}
+      aria-modal="true"
+      className="lightbox"
+      exit={{ opacity: 0 }}
+      initial={{ opacity: 0 }}
+      onClick={onClose}
+      role="dialog"
+      transition={{ duration: 0.2 }}
+    >
       <button aria-label="Close" className="lightbox-close" onClick={onClose} type="button">
         &times;
       </button>
@@ -46,10 +58,27 @@ export function Lightbox({ items, activeIndex, onClose, onNavigate }: LightboxPr
       >
         &larr;
       </button>
-      <figure className="lightbox-figure" onClick={(event) => event.stopPropagation()}>
-        <img alt="" aria-hidden="true" src={item.image} />
+      <motion.figure
+        animate={{ opacity: 1, scale: 1 }}
+        className="lightbox-figure"
+        initial={{ opacity: 0, scale: shouldReduceMotion ? 1 : 0.94 }}
+        onClick={(event) => event.stopPropagation()}
+        transition={{ duration: shouldReduceMotion ? 0 : 0.25 }}
+      >
+        <AnimatePresence mode="wait">
+          <motion.img
+            alt=""
+            animate={{ opacity: 1 }}
+            aria-hidden="true"
+            exit={{ opacity: 0 }}
+            initial={{ opacity: 0 }}
+            key={item.image}
+            src={item.image}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.2 }}
+          />
+        </AnimatePresence>
         <figcaption>{item.label}</figcaption>
-      </figure>
+      </motion.figure>
       <button
         aria-label="Next image"
         className="lightbox-nav lightbox-next"
@@ -61,6 +90,6 @@ export function Lightbox({ items, activeIndex, onClose, onNavigate }: LightboxPr
       >
         &rarr;
       </button>
-    </div>
+    </motion.div>
   );
 }

@@ -2,6 +2,7 @@ import { CrossIcon, DoveIcon, ShellIcon } from "@/components/icons";
 import { IconCard } from "@/components/IconCard";
 import { Reveal } from "@/components/Reveal";
 import { SectionDivider } from "@/components/SectionDivider";
+import { StaggerGroup } from "@/components/StaggerGroup";
 import { TestimonialCard } from "@/components/TestimonialCard";
 
 export const metadata = {
@@ -21,7 +22,7 @@ export default function AboutPage() {
       </section>
       <SectionDivider />
       <Reveal className="section alt">
-        <div className="grid">
+        <StaggerGroup className="grid">
           <IconCard icon={<CrossIcon />} title="Faith">
             Reflections and resources rooted in prayer, service, and spiritual formation.
           </IconCard>
@@ -31,7 +32,7 @@ export default function AboutPage() {
           <IconCard icon={<DoveIcon />} title="Community">
             Ministry stories and invitations to connect, support, and participate.
           </IconCard>
-        </div>
+        </StaggerGroup>
       </Reveal>
       <SectionDivider />
       <Reveal className="section">
@@ -43,7 +44,7 @@ export default function AboutPage() {
             when they&rsquo;re ready to share.
           </p>
         </div>
-        <div className="grid">
+        <StaggerGroup className="grid">
           <TestimonialCard
             quote="The reflections here gave our small group something honest to pray with each week."
             role="A parish volunteer"
@@ -56,7 +57,7 @@ export default function AboutPage() {
             quote="It's rare to find a ministry page that feels unhurried. This one does."
             role="A ministry coordinator"
           />
-        </div>
+        </StaggerGroup>
       </Reveal>
     </>
   );

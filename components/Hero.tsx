@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HeroParallax } from "@/components/HeroParallax";
 import { LiturgicalTag } from "@/components/LiturgicalTag";
 import { getLiturgicalInfo } from "@/content/liturgical";
 
@@ -7,8 +8,7 @@ export function Hero() {
 
   return (
     <section className="hero">
-      <span aria-hidden="true" className="hero-glow" />
-      <img alt="" aria-hidden="true" className="hero-rosette" src="/images/hero-rosette.svg" />
+      <HeroParallax />
       <div className="hero-content">
         <div className="hero-tags">
           <p className="eyebrow">Grace &amp; Journey</p>
